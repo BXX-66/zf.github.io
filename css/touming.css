@@ -1,0 +1,38 @@
+/* =========================
+   Butterfly 半透明最终生效版（极简+100%成功）文章栏和侧边栏透明
+   ========================= */
+
+/* ===== 1️⃣ 核心变量（同步主题原生变量，只改这里就能调透明度） ===== */
+:root {
+  --card-bg: rgba(255, 255, 255, 0.7) !important;
+}
+
+[data-theme="dark"] {
+  --card-bg: rgba(25, 25, 25, 0.7) !important;
+}
+
+/* ===== 2️⃣ 文章页+阅读模式 ===== */
+.layout_post > #post,
+.read-mode .layout_post > #post {
+  background: var(--card-bg) !important;
+}
+
+/* ===== 3️⃣ 首页文章卡片 ===== */
+#recent-posts > .recent-post-item {
+  background: var(--card-bg) !important;
+}
+
+/* ===== 4️⃣ 独立页面 ===== */
+.layout_page > div:first-child:not(.recent-posts) {
+  background: var(--card-bg) !important;
+}
+
+/* ===== 5️⃣ 侧边栏卡片（精准排除公告栏，不改动你的公告栏样式） ===== */
+#aside_content .card-widget:not(.card-announcement) {
+  background: var(--card-bg) !important;
+}
+
+/* ===== 6️⃣ 公告栏完全保持你原有样式 ===== */
+.card-widget.card-announcement {
+  background: unset !important;
+}

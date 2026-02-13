@@ -1,0 +1,81 @@
+/* 云标签样式 - 均匀分布+高级配色版 */
+.type-tags .tag-cloud-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* 核心：均匀分布标签，左右留白，标签间间距一致 */
+  justify-content: space-around;
+  /* 增大上下内边距，左右留空避免贴边 */
+  padding: 20px 40px;
+  /* 增大标签间距，避免拥挤 */
+  gap: 15px;
+  /* 限制最大宽度，避免标签拉得太开 */
+  max-width: 1200px;
+  /* 让容器居中，适配不同屏幕 */
+  margin: 0 auto;
+}
+
+.type-tags .tag-cloud-list a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 24px;
+  /* 保留渐变质感 */
+  background: linear-gradient(135deg, #f0f8fb 0%, #e8f4f8 100%);
+  border: 1px solid #dee2e6;
+  box-shadow: 0 3px 10px rgba(149, 157, 165, 0.1);
+  color: #2d3748;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* 可选：固定最小宽度，避免短标签太窄 */
+  min-width: 80px;
+  /* 让标签内文字居中，更整齐 */
+  justify-content: center;
+}
+
+/* #前缀样式 */
+.type-tags .tag-cloud-list a::before {
+  content: "#";
+  color: #4299e1;
+  font-weight: 600;
+}
+
+/* 数量标签 */
+.type-tags .tag-cloud-list .count {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 12px;
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  color: #10b981;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* 悬停效果 */
+.type-tags .tag-cloud-list a:hover {
+  background: linear-gradient(135deg, #e6f7ff 0%, #d1e9ff 100%);
+  border-color: #91caff;
+  box-shadow: 0 6px 16px rgba(66, 153, 225, 0.15);
+  transform: translateY(-2px);
+}
+
+.type-tags .tag-cloud-list a:hover::before {
+  color: #2563eb;
+  text-shadow: 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.type-tags .tag-cloud-list a:hover .count {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+  color: #059669;
+}
+
+/* 保持背景透明 */
+.type-tags #page {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}

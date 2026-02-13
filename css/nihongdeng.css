@@ -1,0 +1,94 @@
+/* 白天模式：柔和版霓虹动画（不刺眼） */
+[data-theme="light"] #site-name,
+[data-theme="light"] #site-title {
+  animation: light_8px 15s ease-in-out infinite; /* 光晕8px+15秒慢循环 */
+  transform: translateZ(0); /* 硬件加速保流畅 */
+  will-change: text-shadow;
+}
+[data-theme="light"] #site-subtitle {
+  animation: light_5px 15s ease-in-out infinite; /* 光晕5px */
+  transform: translateZ(0);
+  will-change: text-shadow;
+}
+[data-theme="light"] #post-info {
+  animation: light_3px 15s ease-in-out infinite; /* 光晕3px（几乎不显眼） */
+  transform: translateZ(0);
+  will-change: text-shadow;
+}
+
+/* 夜间模式：原有高亮版霓虹效果（不变） */
+[data-theme="dark"] #site-name,
+[data-theme="dark"] #site-title {
+  animation: light_15px 10s ease-in-out infinite;
+  transform: translateZ(0);
+  will-change: text-shadow;
+}
+[data-theme="dark"] #site-subtitle {
+  animation: light_10px 10s ease-in-out infinite;
+  transform: translateZ(0);
+  will-change: text-shadow;
+}
+[data-theme="dark"] #post-info {
+  animation: light_5px 10s ease-in-out infinite;
+  transform: translateZ(0);
+  will-change: text-shadow;
+}
+
+/* 白天模式柔和光效关键帧（低饱和色+小光晕） */
+@keyframes light_8px {
+  0%, 100% { text-shadow: #9079ed 0 0 8px; } /* 淡紫色（低饱和） */
+  12.5% { text-shadow: #61ee8e 0 0 8px; } /* 淡绿色 */
+  25% { text-shadow: #f17777 0 0 8px; } /* 淡红色 */
+  37.5% { text-shadow: #f1b977 0 0 8px; } /* 淡橙色 */
+  50% { text-shadow: #f1ee77 0 0 8px; } /* 淡黄色 */
+  62.5% { text-shadow: #c079f1 0 0 8px; } /* 淡浅紫 */
+  75% { text-shadow: #5079fa 0 0 8px; } /* 淡蓝色 */
+  87.5% { text-shadow: #ed90b0 0 0 8px; } /* 淡粉色 */
+  95% { text-shadow: #69c5bb 0 0 8px; } /* 淡青色 */
+}
+@keyframes light_5px {
+  0%, 100% { text-shadow: #9079ed 0 0 5px; }
+  12.5% { text-shadow: #61ee8e 0 0 5px; }
+  25% { text-shadow: #f17777 0 0 5px; }
+  37.5% { text-shadow: #f1b977 0 0 5px; }
+  50% { text-shadow: #f1ee77 0 0 5px; }
+  62.5% { text-shadow: #c079f1 0 0 5px; }
+  75% { text-shadow: #5079fa 0 0 5px; }
+  87.5% { text-shadow: #ed90b0 0 0 5px; }
+  95% { text-shadow: #69c5bb 0 0 5px; }
+}
+@keyframes light_3px {
+  0%, 100% { text-shadow: #9079ed 0 0 3px; }
+  12.5% { text-shadow: #61ee8e 0 0 3px; }
+  25% { text-shadow: #f17777 0 0 3px; }
+  37.5% { text-shadow: #f1b977 0 0 3px; }
+  50% { text-shadow: #f1ee77 0 0 3px; }
+  62.5% { text-shadow: #c079f1 0 0 3px; }
+  75% { text-shadow: #5079fa 0 0 3px; }
+  87.5% { text-shadow: #ed90b0 0 0 3px; }
+  95% { text-shadow: #69c5bb 0 0 3px; }
+}
+
+/* 夜间模式原有高亮关键帧（不变） */
+@keyframes light_15px {
+  0%, 100% { text-shadow: #5636ed 0 0 15px; }
+  12.5% { text-shadow: #11ee5e 0 0 15px; }
+  25% { text-shadow: #f14747 0 0 15px; }
+  37.5% { text-shadow: #f1a247 0 0 15px; }
+  50% { text-shadow: #f1ee47 0 0 15px; }
+  62.5% { text-shadow: #b347f1 0 0 15px; }
+  75% { text-shadow: #002afa 0 0 15px; }
+  87.5% { text-shadow: #ed709b 0 0 15px; }
+  95% { text-shadow: #39c5bb 0 0 15px; }
+}
+@keyframes light_10px {
+  0%, 100% { text-shadow: #5636ed 0 0 10px; }
+  12.5% { text-shadow: #11ee5e 0 0 10px; }
+  25% { text-shadow: #f14747 0 0 10px; }
+  37.5% { text-shadow: #f1a247 0 0 10px; }
+  50% { text-shadow: #f1ee47 0 0 10px; }
+  62.5% { text-shadow: #b347f1 0 0 10px; }
+  75% { text-shadow: #002afa 0 0 10px; }
+  87.5% { text-shadow: #ed709b 0 0 10px; }
+  95% { text-shadow: #39c5bb 0 0 10px; }
+}

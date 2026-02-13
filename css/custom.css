@@ -1,0 +1,155 @@
+/* ===================== 核心背景设置 ===================== */
+/* 背景图片 - 全屏固定显示 */
+#web_bg {
+  background: url("/img/background/background.jpg") no-repeat center center fixed !important;
+  background-size: cover !important;
+}
+
+/* ===================== 页头 & 页脚透明 ===================== */
+#footer, #page-header {
+  background: transparent !important;
+}
+
+#footer::before, #page-header::before,
+[data-theme="dark"] #footer::before,
+[data-theme="dark"] #page-header::before {
+  background: transparent !important;
+}
+
+/* ===================== 公告区域样式（玻璃特效） ===================== */
+.card-widget.card-announcement {
+  background: rgba(13, 17, 23, 0.6) !important; /* 玻璃半透核心 */
+}
+.card-widget.card-announcement .item-headline i {
+  color: #00ffe5 !important;
+}
+
+/* ===================== 侧边栏个人信息卡片（日夜渐变效果） ===================== */
+/* 白天模式 - 动态渐变色 */
+#aside-content > .card-widget.card-info {
+  background: linear-gradient(
+    -45deg,
+    #e8d8b9,
+    #eccec5,
+    #a3e9eb,
+    #bdbdf0,
+    #eec1ea
+  );
+  box-shadow: 0 0 5px rgb(66, 68, 68);
+  position: relative;
+  background-size: 400% 400%;
+  animation: Gradient 20s ease infinite !important; /* 慢速渐变 */
+}
+
+/* 夜间模式/移动端 - 渐变适配（关闭动画+深色背景） */
+[data-theme="dark"] #aside-content > .card-widget.card-info,
+@media (max-width: 768px) #aside-content > .card-widget.card-info {
+  background: #191919ee !important;
+  animation: none !important; /* 移动端关闭动画 */
+}
+
+/* ===================== 渐变动画关键帧（支撑侧边栏渐变） ===================== */
+@keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@-webkit-keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@-moz-keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/*  */
+/* ===============================
+/* ================================= */
+/*     纯黑覆盖版 · 上一篇 / 下一篇  */
+/* ================================= */
+
+.pagination-post {
+  display: flex;
+  gap: 24px;
+  margin: 60px 0;
+}
+
+.pagination-post a {
+  position: relative;
+  flex: 1;
+  height: 220px;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #ffffff;
+
+  /* 直接用纯黑色 */
+  background-color: #000000;
+
+  transition: all 0.3s ease;
+}
+
+/* 背景图压暗 */
+.pagination-post .cover {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.25;   /* 让图片存在但很弱 */
+  filter: brightness(0.5);
+
+  transition: transform 0.5s ease;
+}
+
+/* 横向居中 */
+.pagination-post .info {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  z-index: 2;
+}
+
+.pagination-post .info span {
+  display: block;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.pagination-post .info h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* hover */
+.pagination-post a:hover {
+  background-color: #000000;
+}
+
+.pagination-post a:hover .cover {
+  transform: scale(1.05);
+  opacity: 0.35;
+}
+
+/* 移动端 */
+@media (max-width: 768px) {
+  .pagination-post {
+    flex-direction: column;
+  }
+
+  .pagination-post a {
+    height: 180px;
+  }
+
+  .pagination-post .info {
+    top: 45%;
+  }
+}
